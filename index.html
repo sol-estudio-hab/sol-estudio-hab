@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sol Estudio HAB</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FAF3EB;
+    color: #2f2f2f;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, #007F5F 0%, #00A676 100%);
+    box-shadow: 0 4px 20px rgba(0, 127, 95, 0.15);
+}
+
+header .header-top {
+    position: sticky;
+    top: 0;
+    background: rgba(0, 127, 95, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .brand-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header .header-banner {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+header .header-banner img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+header .banner-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+    padding: 10px 5%;
+    color: white;
+}
+
+header .banner-overlay h2 {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+header .whatsapp-btn {
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+header .whatsapp-btn:hover {
+    background: #20BA5A;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+footer {
+    background: linear-gradient(135deg, #2f2f2f 0%, #1a1a1a 100%);
+    color: white;
+    padding: 50px 10%;
+    margin-top: 80px;
+}
+
+footer h3 {
+    color: #00A676;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+footer .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+footer .location-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+footer .location-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #00A676;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 166, 118, 0.2);
+}
+
+footer .location-card a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+footer .location-card .icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+footer .location-card .text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+footer .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+section {
+    padding: 80px 10%;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #007F5F;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    color: #FF6F61;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.hero-image {
+    position: relative;
+    text-align: center ;
+}
+
+.hero-image img {
+    width: 60%;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 127, 95, 0.2);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+.autoexclusion {
+    margin-top: 30px;
+    padding-left: 20px;
+    border-left: 4px solid #007F5F;
+    font-weight: 500;
+}
+
+.values ul {
+    list-style: none;
+    padding: 0;
+}
+
+.values li {
+    margin-bottom: 12px;
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.image-box {
+    text-align: center;
+}
+
+.image-box img {
+    width: 60%;
+    border-radius: 16px;
+}
+
+.filter-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.filter-box h3 {
+    margin-top: 0;
+}
+
+.avatar {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.avatar img {
+    width: 150px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.cta {
+    text-align: center;
+}
+
+.cta a {
+    display: inline-block;
+    background-color: #FF6F61;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.testimonials {
+    background: linear-gradient(135deg, #FAF3EB 0%, #FFF8F0 100%);
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.testimonials .subtitle-text {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-items: center;
+}
+
+.testimonial-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonial-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007F5F;
+    box-shadow: 0 8px 20px rgba(0, 127, 95, 0.2);
+    transition: all 0.3s ease;
+}
+
+.testimonial-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 127, 95, 0.3);
+}
+
+.testimonial-item .label {
+    font-weight: 600;
+    color: #007F5F;
+    font-size: 0.9rem;
+}
+
+.testimonial-item.family:nth-of-type(5) {
+    grid-column: 2;
+}
+
+.testimonial-item.family:nth-of-type(6) {
+    grid-column: 3;
+}
+
+@media (max-width: 768px) {
+    header .header-top {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+    
+    header .brand-name {
+        font-size: 1.4rem;
+    }
+    
+    header .header-banner img {
+        max-height: 250px;
+    }
+    
+    header .banner-overlay {
+        padding: 20px 5%;
+    }
+    
+    header .banner-overlay h2 {
+        font-size: 1.3rem;
+    }
+    
+    header .whatsapp-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .testimonial-item.family {
+        /* En móvil las familias también quedan en fila de 2 */
+    }
+    
+    .testimonial-item img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    footer .locations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-top: 40px !important;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.4rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-top">
+        <h1 class="brand-name">Sol Estudio HAB</h1>
+        <a class="whatsapp-btn" href="https://api.whatsapp.com/send/?phone=573053638927" target="_blank">
+            📱 Contactar por WhatsApp
+        </a>
+    </div>
+    <div class="header-banner">
+        <img src="Avatars/sol-estudio-hab-banner.png" alt="Sol Estudio HAB - Hogar para estudiantes">
+        <div class="banner-overlay">
+            <h2>Vivir con orden para estudiar con tranquilidad</h2>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Bienestar y rendimiento se combinan en cada espacio</h2>
+        <p class="subtitle">
+            Somos un hogar diseñado para estudiantes responsables que eligen vivir con acuerdos claros desde el inicio.
+            La seguridad, el orden y la limpieza son la base de una convivencia en libertad y bienestar.
+        </p>
+        <div class="autoexclusion">
+            Este hogar es para estudiantes que valoran la convivencia basada en acuerdos claros y respeto mutuo.
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="Avatars/Clientes/Estudiante.png" alt="Habitación Sol Estudio HAB">
+    </div>
+</section>
+
+<section class="values">
+    <h2>Valores que sostienen este hogar</h2>
+    <ul>
+        <li>Responsabilidad sobre el espacio propio y común.</li>
+        <li>Respeto por la convivencia y el bienestar mutuo.</li>
+        <li>Compromiso con el bienestar y la armonía.</li>
+		<li>Seguridad para disfrutar del espacio con confianza.</li>
+        <li>Orden y limpieza como estándar diario en las zonas comunes.</li>
+        <li>Respeto por la autonomía del espacio privado de cada estudiante.</li>
+        <li>Seguridad y autonomía responsable.</li>
+        <li>Comunicación oportuna y eficaz: los acuerdos son la herramienta principal y están siempre disponibles en formato impreso y digital.</li>
+    </ul>
+</section>
+
+<section class="two-columns">
+    <div>
+        <h2>Un hogar que acompaña tu bienestar, y potencia cada meta académica</h2>
+        <p>
+            Un estudiante responsable necesita un entorno que funcione con acuerdos claros y transparencia.
+            Espacios iluminados, privados y amplios, junto con una convivencia ordenada, marcan la diferencia.
+            Una estadía estable y prolongada permite mantener el enfoque donde debe estar: en los estudios.
+        </p>
+        <p>
+            En Sol Estudio HAB priorizamos estadías estables, porque la continuidad es parte del bienestar y del buen rendimiento académico.
+            Por eso, este hogar está pensado para estudiantes que buscan permanecer varios meses y construir una experiencia sólida durante su etapa de estudio.
+        </p>
+
+        <h2>Bienestar y rendimiento se combinan en cada espacio</h2>
+        <p>
+            Un entorno seguro, ordenado y bien gestionado para que los estudiantes vivan con enfoque y las familias estén tranquilas, incluso a la distancia.
+            La convivencia está pensada desde el inicio y guiada por acuerdos claros que favorecen la armonía.
+        </p>
+
+        <h2>Una experiencia completa</h2>
+        <p>
+            Habitaciones privadas, bien iluminadas, juveniles, agradables. <br>
+            Áreas comunes amplias, funcionales y cuidadas, que invitan al estudio, al descanso y al respeto mutuo.
+            <br><br>
+            Servicios incluidos (agua, energía, gas y Wi-Fi en fibra de 350Mb) para una experiencia que cuida cada detalle.
+            Todo está diseñado para que la vida diaria fluya de la forma más armónica posible.
+        </p>
+
+    </div>
+    <div class="image-box">
+        <img src="Avatars/Clientes/Estudiante2.png" alt="Espacios comunes ordenados">
+    </div>
+</section>
+
+<section class="two-columns">
+    <div>   
+        <h2>Ubicación estratégica que mejora la calidad de vida</h2>
+    <p>
+        Vivir cerca de la universidad significa menos traslados y más tiempo para estudiar, descansar y vivir bien.
+        Una ventaja silenciosa que se siente todos los días. <br><br>
+        Ubicados a un minuto de la avenida Puerto López, con conexión directa a toda la ciudad,
+        a tres minutos caminando de la Universidad Cooperativa de Colombia y a diez minutos del centro.
+        <br><br>
+        <a href="#ubicaciones" style="color: #007F5F; font-weight: 600; text-decoration: underline;">
+            👉 Ver ubicaciones en Google Maps al final de la página
+        </a> - Encuentra las rutas desde tu ubicación con un clic.
+    </p>
+    </div>
+    <div class="image-box">
+        <img src="Avatars/Clientes/Estudiante2.jpeg" alt="Ubicación estratégica Sol Estudio HAB">
+    </div>
+</section>
+
+<section>
+    <h2>Convivencia cuidada, basada en acuerdos claros</h2>
+    <p>
+        En Sol Estudio HAB La convivencia no se improvisa. 
+        Se construye a partir de acuerdos claros, respeto mutuo y autonomía responsable.<br><br>
+        Este es un entorno juvenil donde el orden y la colaboración permiten una convivencia armónica, incluso entre estudiantes de distintos lugares y costumbres, porque el marco compartido está claro desde el inicio.
+
+    </p>
+</section>
+
+<section class="two-columns">
+    <div> 
+        <h3>Este espacio es para ti si:</h3>
+        <ul>
+            <li>Valoras el orden y la limpieza como parte de tu bienestar.</li>
+            <li>Prefieres un ambiente tranquilo y bien definido que facilite el estudio y el descanso.</li>
+            <li>Buscas estabilidad y eliges estadías de mediano a largo plazo.</li>
+            <li>Te sientes cómodo viviendo en un lugar bien gestionado, con acuerdos claros desde el inicio.</li>
+            <li>Aprecias la claridad, la calidad y una convivencia cuidada por encima de lo improvisado.</li>
+        </ul>
+
+        <h3>Este espacio no es para ti si:</h3>
+        <ul>
+            <li>Necesitas una estadía corta o transitoria.</li>
+            <li>Buscas flexibilidad sobre los valores que sostienen este hogar.</li>
+            <li>El orden, la limpieza y la convivencia respetuosa no hacen parte de tu estilo de vida.</li>
+        </ul>
+    </div>
+    <div class="image-box">
+        <img src="Avatars/Clientes/Estudiante4.png" alt="Estudiante feliz en Sol Estudio HAB">
+    </div>
+</section>
+
+<section class="two-columns">
+    <div>
+        <h2>¿Quiénes somos?</h2>
+        <p>
+            Sol Estudio HAB es un hogar diseñado para estudiantes responsables que eligen vivir con acuerdos claros.
+            La seguridad, el orden y la limpieza son la base de una convivencia en libertad y bienestar.
+        </p>
+
+        <h2>Nuestros clientes</h2>
+        <p>
+            Las familias eligen Sol Estudio HAB porque sienten tranquilidad desde el primer contacto. <br>
+            Saben que su hijo vive en un entorno cuidado, estable y bien gestionado.<br>
+            Una decisión que se toma con calma y confianza.<br>
+        </p>
+    </div>
+    <div class="image-box">
+        <img src="Avatars/Clientes/madres.png" alt="Familias tranquilas con Sol Estudio HAB">
+    </div>
+</section>
+
+<section class="avatar">
+    <img src="Avatars/admins/Administrador.png" alt="Administración Sol Estudio HAB">
+    <div>
+        <h3>Administración, La tranquilidad de un entorno bien gestionado.</h3>
+        <p>
+            Detrás de Sol Estudio HAB hay una gestión administrativa integral, preventiva y presente. <br>
+            La administración, acompaña para que todo funcione, por eso se firma un acuerdo de buena fe entre ambas partes, para que cada parte tenga clara su responsabilidad y todo fluya en armonía. <br>
+            Hoy, el reto es llegar a estudiantes responsables y sus familias, que valoran este tipo de cuidado estructural. <br>
+            Personas que entienden que el bienestar no es improvisado, sino construido desde bases sólidas. Con tu apoyo, al compartir esta información, podemos conectar.
+        </p>
+    </div>
+</section>
+
+<section class="avatar">
+    <img src="Avatars/admins/231225CREADORA.png" alt="Creadora Sol Estudio HAB">
+    <div>
+        <h3>Soy la creadora de Sol Estudio Hab.</h3>
+        <p>
+            Este espacio nace de un sueño muy personal: crear el lugar con el que siempre soñé cuando empecé sola, en una ciudad donde no conocía a nadie, sin apoyo de ningún tipo, pero con una visión clara.<br><br>
+            Soñé con un hogar donde el orden, la seguridad y la belleza no fueran un lujo, sino una base real para vivir con seguridad, orden y en paz. <br><br>
+            Hoy, esa visión es real, Sol Estudio HAB, habitaciones pensadas con propósito, donde los estudiantes pueden vivir con orden, respeto, libertad y bienestar, y donde sus familias reciben tranquilidad, desde el primer minuto. <br><br>
+            No competimos, servimos con amor. Y si tú eres estudiante y conectas con esta idea, apóyame compartiendo este mensaje. Las familias de quienes están por llegar y yo, te lo agradeceremos de corazón.
+        </p>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2>Diseñado para estudiantes responsables y familias que valoran la tranquilidad</h2>
+    <p class="subtitle-text">
+        Este hogar es ideal para estudiantes enfocados en sus metas académicas y familias que buscan un entorno seguro, ordenado y bien gestionado. 
+        Un espacio donde el bienestar no se improvisa, sino que se construye con acuerdos claros desde el inicio.
+    </p>
+    <div class="testimonials-grid">
+        <div class="testimonial-item">
+            <img src="Avatars/Clientes/Estudiante.png" alt="Estudiante feliz">
+            <span class="label">Estudiante</span>
+        </div>
+        <div class="testimonial-item">
+            <img src="Avatars/Clientes/Estudiante2.jpeg" alt="Estudiante">
+            <span class="label">Estudiante</span>
+        </div>
+        <div class="testimonial-item">
+            <img src="Avatars/Clientes/Estudiante2.png" alt="Estudiante">
+            <span class="label">Estudiante</span>
+        </div>
+        <div class="testimonial-item">
+            <img src="Avatars/Clientes/Estudiante4.png" alt="Estudiante">
+            <span class="label">Estudiante</span>
+        </div>
+        <div class="testimonial-item family">
+            <img src="Avatars/Clientes/madres.png" alt="Madres felices">
+            <span class="label">Familias</span>
+        </div>
+        <div class="testimonial-item family">
+            <img src="Avatars/Clientes/Padres.png" alt="Padres felices">
+            <span class="label">Familias</span>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Antes de avanzar, una pregunta importante</h2>
+    <p>
+        ¿Este estilo de vida con acuerdos claros que permiten convivir con bienestar,
+        libertad y tranquilidad es el que estás buscando para tu etapa de estudio?
+    </p>
+    <a target="_blank" href="https://api.whatsapp.com/send/?phone=573053638927&text=Hola%2C%20buen%20d%C3%ADa%20%F0%9F%91%8B%0AHe%20le%C3%ADdo%20la%20informaci%C3%B3n%20y%20estoy%20interesado%20en%20conocer%20las%20habitaciones%20disponibles%20%F0%9F%8F%A1%0AEstoy%20de%20acuerdo%20con%20el%20orden%20%F0%9F%A7%BC%2C%20la%20limpieza%20%E2%9C%A8%20y%20los%20acuerdos%20de%20convivencia%2C%20y%20me%20comprometo%20a%20ayudar%20a%20mantener%20el%20espacio%20de%20ese%20modo.%0A%C2%BFPodr%C3%ADan%20indicarme%20qu%C3%A9%20habitaciones%20est%C3%A1n%20disponibles%20actualmente%3F&type=phone_number&app_absent=0">
+        Continuar por WhatsApp
+    </a>
+
+</section>
+
+<footer id="ubicaciones">
+    <h3>📍 Ubicación Estratégica</h3>
+    <div class="locations-grid">
+        <div class="location-card">
+            <a href="https://maps.app.goo.gl/uXkGTk7KZ9MAwRtj6" target="_blank">
+                <div class="icon">🎓</div>
+                <div class="text">A 5 minutos de<br><strong>U. Cooperativa</strong><br>caminando</div>
+            </a>
+        </div>
+        <div class="location-card">
+            <a href="https://maps.app.goo.gl/DznN6AmoyNe5Z4ua6" target="_blank">
+                <div class="icon">🏫</div>
+                <div class="text">A 15 minutos de<br><strong>U. Santo Tomas</strong><br>caminando</div>
+            </a>
+        </div>
+        <div class="location-card">
+            <a href="https://maps.app.goo.gl/CsZU1GgDMaJVpiDF7" target="_blank">
+                <div class="icon">🚌</div>
+                <div class="text">A 8 minutos al paradero de buses<br><strong>Unillanos sede Barcelona</strong></div>
+            </a>
+        </div>
+        <div class="location-card">
+            <a href="https://maps.app.goo.gl/RQfdyBTZV1v7tqL16" target="_blank">
+                <div class="icon">🚗</div>
+                <div class="text">A 15 minutos en carro<br><strong>Unillanos sede San Antonio</strong></div>
+            </a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Sol Estudio HAB © 2026 - Bienestar y rendimiento en cada espacio</p>
+    </div>
+</footer>
+
+</body>
+</html>
