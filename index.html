@@ -8,23 +8,76 @@
 <meta name="keywords" content="habitaciones universitarias Villavicencio, residencias estudiantes Villavicencio, alojamiento universitario, habitaciones amuebladas, Universidad Cooperativa, Santo Tomás, Unillanos">
 <meta name="author" content="Sol Estudio HAB">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.solestudiohab.com/">
+<link rel="canonical" href="https://sol-estudio-hab.github.io/sol-estudio-hab/">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<!-- Geo-targeting para Colombia -->
+<meta name="geo.region" content="CO-MET">
+<meta name="geo.placename" content="Villavicencio">
+<meta name="geo.position" content="4.142002;-73.626644">
+<meta name="ICBM" content="4.142002, -73.626644">
+<meta name="geo.country" content="CO">
+<meta name="language" content="es-CO">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.solestudiohab.com/">
+<meta property="og:url" content="https://sol-estudio-hab.github.io/sol-estudio-hab/">
 <meta property="og:title" content="Sol Estudio HAB - Habitaciones para Estudiantes Universitarios">
 <meta property="og:description" content="Habitaciones amuebladas para estudiantes universitarios en Villavicencio. Espacios seguros, ordenados y con todos los servicios incluidos.">
-<meta property="og:image" content="https://www.solestudiohab.com/Avatars/sol-estudio-hab-banner.png">
+<meta property="og:image" content="https://sol-estudio-hab.github.io/sol-estudio-hab/Avatars/sol-estudio-hab-banner.png">
 <meta property="og:locale" content="es_CO">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:country-name" content="Colombia">
+<meta property="og:region" content="Meta">
+<meta property="og:site_name" content="Sol Estudio HAB">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://www.solestudiohab.com/">
+<meta property="twitter:url" content="https://sol-estudio-hab.github.io/sol-estudio-hab/">
 <meta property="twitter:title" content="Sol Estudio HAB - Habitaciones para Estudiantes Universitarios">
 <meta property="twitter:description" content="Habitaciones amuebladas para estudiantes universitarios en Villavicencio. Espacios seguros, ordenados y con todos los servicios incluidos.">
-<meta property="twitter:image" content="https://www.solestudiohab.com/Avatars/sol-estudio-hab-banner.png">
+<meta property="twitter:image" content="https://sol-estudio-hab.github.io/sol-estudio-hab/Avatars/sol-estudio-hab-banner.png">
+
+<!-- Schema.org Structured Data para SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Sol Estudio HAB",
+  "description": "Habitaciones amuebladas para estudiantes universitarios en Villavicencio, Colombia",
+  "url": "https://sol-estudio-hab.github.io/sol-estudio-hab/",
+  "telephone": "+57-321-459-5803",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Villavicencio",
+    "addressRegion": "Meta",
+    "addressCountry": "CO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "4.142002",
+    "longitude": "-73.626644"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Villavicencio",
+    "containedIn": {
+      "@type": "State",
+      "name": "Meta",
+      "containedIn": {
+        "@type": "Country",
+        "name": "Colombia"
+      }
+    }
+  },
+  "priceRange": "$$",
+  "currenciesAccepted": "COP",
+  "paymentAccepted": "Efectivo, Transferencia bancaria",
+  "sameAs": [
+    "https://www.instagram.com/sol_estudio_hab"
+  ]
+}
+</script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T89326G21K"></script>
@@ -33,7 +86,11 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-T89326G21K');
+  gtag('config', 'G-T89326G21K', {
+    'country': 'CO',
+    'region': 'Meta',
+    'city': 'Villavicencio'
+  });
   
   // Función para rastrear clics en WhatsApp
   function trackWhatsAppClick(location) {
@@ -492,7 +549,7 @@ h1, h2, h3 {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
   "name": "Sol Estudio HAB",
-  "image": "https://www.solestudiohab.com/Avatars/sol-estudio-hab-banner.png",
+  "image": "https://sol-estudio-hab.github.io/sol-estudio-hab/Avatars/sol-estudio-hab-banner.png",
   "description": "Habitaciones amuebladas para estudiantes universitarios en Villavicencio. Espacios seguros, ordenados y con todos los servicios incluidos.",
   "address": {
     "@type": "PostalAddress",
